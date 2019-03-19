@@ -195,7 +195,7 @@ def create_header(params, nodelist, keys, dest, assoc=None):
 
 
 def create_forward_message(params, nodelist, keys, dest, msg, assoc=None):
-    """Creates a forward Sphix message, ready to be processed by a first mix. 
+    """Creates a forward Sphinx message, ready to be processed by a first mix. 
 
     It takes as parameters a node list of mix information, that will be provided to each mix, forming the path of the message;
     a list of public keys of all intermediate mixes; a destination and a message; and optinally an array of associated data (byte arrays)."""
