@@ -169,7 +169,7 @@ def create_header(params, nodelist, keys, dest, assoc=None):
     final_routing = pack("b", len(dest)) + dest
 
     len_meta = sum(map(len, node_meta[1:]))
-    random_pad_len = (max_len - 32) - len_meta # - (nu-1)*p.k - len(final_routing)
+    random_pad_len = (max_len - 32) - len_meta - (nu-1)*p.k - len(final_routing)
 
     if random_pad_len < 0:
         raise SphinxException("Insufficient space routing info") 
