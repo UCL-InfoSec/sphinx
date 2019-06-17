@@ -53,7 +53,7 @@ pki_entry = namedtuple("pki_entry", ["id", "x", "y"])
 
 
 def pad_body(msgtotalsize, body):
-    """ Unpad the Sphinx message body."""
+    """ Pad a Sphinx message body. """
     body = body + b"\x7f"
     body = body + (b"\xff" * (msgtotalsize - len(body)))
 
@@ -63,7 +63,7 @@ def pad_body(msgtotalsize, body):
     return body
 
 def unpad_body(body):
-    """ Pad a Sphinx message body. """
+    """ Unpad the Sphinx message body."""
     body = bytes(body)
     l = len(body) - 1
     x_marker = bytes(b"\x7f")[0]
